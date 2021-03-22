@@ -39,4 +39,89 @@ public class AppTest {
         String[] params = {"112", "Student", "0", "student@gmail.com", "professor"};
         stsrv.add(params);
     }
+
+    @Test
+    public void tc_3_addStudent_valid_group() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test
+    public void tc_4_addStudent_valid_id() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_5_addStudent_invalid_id() throws ValidatorException {
+        String[] params = {"", "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+
+    @Test
+    public void tc_6_addStudent_valid_nume() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_7_addStudent_invalid_nume() throws ValidatorException {
+        String[] params = {"111", "", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test
+    public void tc_8_addStudent_valid_indrumator() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_9_addStudent_invalid_indrumator() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", ""};
+        stsrv.add(params);
+    }
+
+    @Test
+    public void tc_10_addStudent_valid_email() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_11_addStudent_invalid_email() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_12_addStudent_invalid_email() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "asdfas;dlkfj", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_13_addStudent_invalid_id() throws ValidatorException {
+        String[] params = {null, "Student", "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_14_addStudent_invalid_nume() throws ValidatorException {
+        String[] params = {"111", null, "1", "student@gmail.com", "professor"};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_15_addStudent_invalid_indrumator() throws ValidatorException {
+        String[] params = {"111", "Student", "1", "student@gmail.com", null};
+        stsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_16_addStudent_invalid_email() throws ValidatorException {
+        String[] params = {"111", "Student", "1", null, "professor"};
+        stsrv.add(params);
+    }
 }
