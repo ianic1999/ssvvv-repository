@@ -117,6 +117,7 @@ public class AppTest {
     public void tc_15_addStudent_invalid_indrumator() throws ValidatorException {
         String[] params = {"111", "Student", "1", "student@gmail.com", null};
         stsrv.add(params);
+//        System.out.println("aa");
     }
 
     @Test(expected = ValidatorException.class)
