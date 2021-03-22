@@ -28,6 +28,7 @@ public class StudentValidator implements IValidator<Student> {
         }
         if (errors.length()!=0){
             throw  new ValidatorException(errors);
+//            System.out.println("aa");
         }
     }
 }
