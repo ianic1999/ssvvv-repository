@@ -1,0 +1,13 @@
+Domain\TemaLab.class
+Domain\HasId.class
+Repository\MemoryRepository\TemaLabRepo.class
+Repository\MemoryRepository\AbstractCrudRepo.class
+Validator\IValidator.class
+Repository\Repo.class
+Exceptions\ServiceException.class
+Repository\TxtFileRepository\TemaLabFileRepo.class
+Service\TxtFileService\AbstractService.class
+Service\TxtFileService\TemaLabService.class
+Validator\TemaLabValidator.class
+Repository\TxtFileRepository\AbstractFileRepository.class
+Exceptions\ValidatorException.class
