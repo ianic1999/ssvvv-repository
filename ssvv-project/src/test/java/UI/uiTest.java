@@ -29,13 +29,13 @@ public class uiTest {
     ui ui=new ui(stsrv,tmsrv,ntsrv);
 
     @Test
-    public void tc_1_addStudent_success() throws ValidatorException {
+    public void tc_1_addStudent_valid_group() throws ValidatorException {
         String[] params = {"111", "Student", "937", "student@gmail.com", "professor"};
         stsrv.add(params);
     }
 
     @Test(expected = ValidatorException.class)
-    public void tc_1_addStudent_invalid_group() throws ValidatorException {
+    public void tc_2_addStudent_invalid_group() throws ValidatorException {
         String[] params = {"112", "Student", "0", "student@gmail.com", "professor"};
         stsrv.add(params);
     }
