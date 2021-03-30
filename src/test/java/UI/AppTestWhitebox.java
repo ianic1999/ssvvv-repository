@@ -13,7 +13,7 @@ import Validator.StudentValidator;
 import Validator.TemaLabValidator;
 import org.junit.Test;
 
-public class AppTextWhitebox {
+public class AppTestWhitebox {
 
     StudentValidator vs=new StudentValidator();
     TemaLabValidator vt=new TemaLabValidator();
