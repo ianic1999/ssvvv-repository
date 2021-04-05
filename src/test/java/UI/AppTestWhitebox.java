@@ -37,4 +37,69 @@ public class AppTestWhitebox {
         String[] params={"1","Homework","0","1"};
         tmsrv.add(params);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tc_3_addAssignment_invalid_null() throws IllegalArgumentException, ValidatorException {
+        tmrepo.save(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tc_4_addAssignment_id_empty() throws IllegalArgumentException, ValidatorException {
+        String[] params={"","Homework","0","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tc_5_addAssignment_saptLim_empty() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","Homework","","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tc_6_addAssignment_saptPred_empty() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","Homework","0",""};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_7_addAssignment_descriere_empty() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","","0","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_8_addAssignment_descriere_null() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1",null,"0","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_9_addAssignment_id_invalid() throws IllegalArgumentException, ValidatorException {
+        String[] params={"-1","Homework","0","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_10_addAssignment_saptLim_invalid_lower() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","Homework","-1","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_11_addAssignment_saptLim_invalid_upper() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","Homework","15","1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_12_addAssignment_saptPred_invalid_lower() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","Homework","1","-1"};
+        tmsrv.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_13_addAssignment_saptPred_invalid_upper() throws IllegalArgumentException, ValidatorException {
+        String[] params={"1","Homework","1","15"};
+        tmsrv.add(params);
+    }
 }

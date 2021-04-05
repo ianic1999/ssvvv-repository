@@ -21,7 +21,17 @@ public class TemaLabXMLService extends AbstractXMLService<Integer, TemaLab>{
     }
     @Override
     protected TemaLab extractEntity(String[] params){
-        return new TemaLab(Integer.parseInt(params[0]),params[1], Integer.parseInt(params[2]), Integer.parseInt(params[3]));
+        int id = 0;
+        int saptLim = 0;
+        int saptPred = 0;
+        try{
+            id = Integer.parseInt(params[0]);
+            saptLim = Integer.parseInt(params[2]);
+            saptPred = Integer.parseInt(params[3]);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid Numerical Arguments");
+        }
+        return new TemaLab(id,params[1], saptLim, saptPred);
     }
 
 }
